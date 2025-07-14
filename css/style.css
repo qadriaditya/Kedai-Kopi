@@ -1,6 +1,6 @@
 :root {
-  --primary: #2f4f4f;
-  --background: #fffff0;
+  --primary: #204141;
+  --background: #dedede;
 }
 
 * {
@@ -15,7 +15,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
-  color: #fffff0;
+  color: #ffffff;
 }
 
 /* Navbar */
@@ -25,7 +25,7 @@ body {
   align-items: center;
   padding: 1rem 7%;
   background-color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid var(--primary);
+  border-bottom: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -101,7 +101,33 @@ body {
   }
 
   .navbar .navbar-nav {
-    display: none;
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 15rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #000000;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
   }
 }
 
